@@ -161,19 +161,4 @@ plt.imshow(b2, cmap='RdYlGn')
 ![png](output_2_2.png)
 
 
-
-```python
-get_tile([130., -40., 140., -30], 29, 12, 0.1)
-```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-41-776b1e021027> in <module>()
-    ----> 1 get_tile([130., -40., 140., -30], 29, 12, 0.1)
-    
-
-    NameError: name 'get_tile' is not defined
-
+[back](./)
