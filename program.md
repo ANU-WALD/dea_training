@@ -2,39 +2,38 @@
 
 ### Day 1: NCI and introduction to Python
 
-```markdown
-09:00 Course presentation _(15 minutes)_
+* 09:00 Course presentation _(15 minutes)_
 
-09:15 Introduction to the NCI
-- Virtual Desktop Interface (VDI) setting up _(60 mins)_
-- Data services and submission of batch jobs _(15 minutes)_
+* 09:15 Introduction to the NCI
+    - Virtual Desktop Interface (VDI) setting up _(60 mins)_
+    - Data services and submission of batch jobs _(15 minutes)_
 
-10:30 Tea break _(15 minutes)_
+* 10:30 Tea break _(15 minutes)_
 
-10:45 Introduction to Python:
-- The Jupyter notebook environment _(30 minutes)_
-- Intro to numpy and image processing _(60 minutes)_
-- The netCDF file format _(15 minutes)_
+* 10:45 Introduction to Python:
+    - The Jupyter notebook environment _(30 minutes)_
+    - Intro to numpy and image processing _(60 minutes)_
+    - The netCDF file format _(15 minutes)_
 
-12:30 Lunch break _(30 minutes)_
+* 12:30 Lunch break _(30 minutes)_
 
-13:00 The xarray Python library _(30 minutes)_
+* 13:00 The xarray Python library _(30 minutes)_
 
-13:30 Introduction to the DEA Python interface
-- DEA products _(30 minutes)_
-- Searching and visualising products _(30 minutes)_
+* 13:30 Introduction to the DEA Python interface
+    - DEA products _(30 minutes)_
+    - Searching and visualising products _(30 minutes)_
 
-14:30 Tea break _(15 minutes)_
+* 14:30 Tea break _(15 minutes)_
 
-14:45 Advanced use of DEA
-- Masking and merging images _(30 minutes)_
-- Normalised indexes and image manipulation _(30 minutes)_
+* 14:45 Advanced use of DEA
+    - Masking and merging images _(30 minutes)_
+    - Normalised indexes and image manipulation _(30 minutes)_
 
-15:45 Exporting data outside DEA
-- Introduction to GDAL commands _(30 minutes)_
+* 15:45 Exporting data outside DEA
+    - Introduction to GDAL commands _(30 minutes)_
 
-16:30 Self guided exercise: Visualising the evolution of vegetation _(30 minutes)_
-```
+* 16:30 Self guided exercise: Visualising the evolution of vegetation _(30 minutes)_
+
 
 ### Day 2: DEA in Action
 
