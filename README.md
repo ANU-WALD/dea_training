@@ -1,4 +1,4 @@
-## Welcome to the Digital Earth Australia for geospatial analysts course
+## Digital Earth Australia for Geospatial Analysts
 
 ### Context
 
@@ -34,7 +34,7 @@ Format: Hands-on exercises and practical examples delivered to an audience of 10
 
 Dates and Location: 3 sessions to be held between August and December 2019. _(course dates will be anounced soon)_
 
-See the full [Program](./program.html) for a complete description of the contents.
+See the [Program](./program.html) for a complete description of the contents.
 
 
 ### Support or Contact
