@@ -14,7 +14,7 @@
 
 * 10:45 Introduction to Python:
     - The Jupyter notebook environment _(30 minutes)_
-    - Intro to numpy and image processing [notebook](./_notebooks/1_intro_to_numpy.html) _(60 minutes)_
+    - Intro to numpy and image processing [notebook](/_notebooks/1_intro_to_numpy.html) _(60 minutes)_
     - The netCDF file format _(15 minutes)_
 
 <!-- -->
@@ -32,7 +32,7 @@
 * 14:30 Tea break _(15 minutes)_
 
 * 14:45 Advanced use of DEA
-    - Masking and merging images [notebook](./_notebooks/2_image_analysis.html) _(30 minutes)_
+    - Masking and merging images [notebook](/_notebooks/2_image_analysis.html) _(30 minutes)_
     - Normalised indexes and image manipulation _(30 minutes)_
 
 <!-- -->
