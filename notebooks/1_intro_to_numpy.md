@@ -274,4 +274,4 @@ plt.imshow(im)
 
 ***
 
-[back](./)
+[back](/)
