@@ -292,4 +292,4 @@ plt.imshow(class_comp)
 
 ***
 
-[back](/program.html)
+[back](/dea_training/program.html)
