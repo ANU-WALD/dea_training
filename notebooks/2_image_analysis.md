@@ -1,4 +1,3 @@
-
 ## Image Processing and Classification
 
 
@@ -37,7 +36,7 @@ plt.imshow(arr_modis[:,:,0])
 
 
 
-    <matplotlib.image.AxesImage at 0x1211bc2b0>
+    <matplotlib.image.AxesImage at 0x7f4d401ccba8>
 
 
 
@@ -104,7 +103,7 @@ plt.imshow(refl_modis[:,:,[0,3,2]]*3)
 
 
 
-    <matplotlib.image.AxesImage at 0x12122d9b0>
+    <matplotlib.image.AxesImage at 0x7f4cecfd28d0>
 
 
 
@@ -127,7 +126,7 @@ plt.imshow(refl_modis[:,:,[1,3,2]]*2)
 
 
 
-    <matplotlib.image.AxesImage at 0x1210d6048>
+    <matplotlib.image.AxesImage at 0x7f4cec736eb8>
 
 
 
@@ -149,14 +148,14 @@ ndvi_modis = (refl_modis[:,:,1]-refl_modis[:,:,0]) / (refl_modis[:,:,1]+refl_mod
 plt.imshow(ndvi_modis, cmap='summer_r')
 ```
 
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide
       """Entry point for launching an IPython kernel.
 
 
 
 
 
-    <matplotlib.image.AxesImage at 0x128114c50>
+    <matplotlib.image.AxesImage at 0x7f4cec717da0>
 
 
 
@@ -174,7 +173,7 @@ plt.imshow(ndvi_modis, vmin=.2, vmax=.8, cmap='summer_r')
 
 
 
-    <matplotlib.image.AxesImage at 0x130631c88>
+    <matplotlib.image.AxesImage at 0x7f4cec672d68>
 
 
 
@@ -182,9 +181,14 @@ plt.imshow(ndvi_modis, vmin=.2, vmax=.8, cmap='summer_r')
 ![png](2_image_analysis_files/2_image_analysis_17_1.png)
 
 
-#### Exercise: Can you create a false colour RGB image using the following mapping: R->red, G->nir, B->blue. Once you have a green fluo image zoom into a region using your indexing skills to select a range of values in the x and y axis.
+#### Exercise: Can you create a false colour RGB image using the following mapping: R->red, G->nir, B->blue. Once you have a green fluo image zoom into a region using your indexing skills.
 
-#### The MODIS data is multi-spectral. We also have some hyperspectral imagery covering the ANU, collected from an airplane in February 2014. High-resolution hyper-spectral data tends to make for very large files. To make processing in this lab easier, we have packed a numpy array with the just the red, nir, green and blue bands. This array is 3-dimensional and the third dimension contains the information of one band of the hyperspectral data, just like the MODIS data. Let's load the data.
+
+```python
+
+```
+
+#### The MODIS data is multi-spectral. We also have some hyperspectral imagery covering the ANU, collected from an airplane in February 2014. High-resolution hyper-spectral data tends to make for very large files. To make processing in this lab easier, we have packed a numpy array with the just the `[red, nir, green, blue]` bands.  This array is 3-dimensional with the third dimension corresponding to the spectral bands, just like the MODIS data. Let's load the data.
 
 ##### Notice that this array also needs to be converted first to reflectance values dividing it by 1e4
 
@@ -192,18 +196,22 @@ plt.imshow(ndvi_modis, vmin=.2, vmax=.8, cmap='summer_r')
 ```python
 arr_anu = np.load("data/anu_cube.npz")["array"]
 refl_anu = arr_anu/1e4
+print(refl_anu.shape)
 plt.imshow(refl_anu[:,:,1])
 ```
 
-
-
-
-    <matplotlib.image.AxesImage at 0x1065ecf98>
+    (482, 521, 4)
 
 
 
 
-![png](2_image_analysis_files/2_image_analysis_20_1.png)
+
+    <matplotlib.image.AxesImage at 0x7f4cde348198>
+
+
+
+
+![png](2_image_analysis_files/2_image_analysis_21_2.png)
 
 
 #### Exercise: Can you calculate the NDVI index for this image following similar steps to the MODIS example? 
@@ -213,9 +221,25 @@ plt.imshow(refl_anu[:,:,1])
 ndvi_anu = None
 
 #Your code here
+ndvi_anu = (refl_anu[:,:,1]-refl_anu[:,:,0])/(refl_anu[:,:,1]+refl_anu[:,:,0])
 
 plt.imshow(ndvi_anu, cmap='summer_r')
 ```
+
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:4: RuntimeWarning: invalid value encountered in true_divide
+      after removing the cwd from sys.path.
+
+
+
+
+
+    <matplotlib.image.AxesImage at 0x7f4cde177780>
+
+
+
+
+![png](2_image_analysis_files/2_image_analysis_23_2.png)
+
 
 #### Similarly to NDVI there is another index called Green Colour Coordinate (GCC), which is an alternative method to NDVI to look at how green the vegetation is and is not based on the near infrared band.
 
@@ -226,19 +250,19 @@ gcc_anu = refl_anu[:,:,2]/(refl_anu[:,:,0]+refl_anu[:,:,2]+refl_anu[:,:,3])
 plt.imshow(gcc_anu, cmap='summer_r')
 ```
 
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide
       """Entry point for launching an IPython kernel.
 
 
 
 
 
-    <matplotlib.image.AxesImage at 0x133095320>
+    <matplotlib.image.AxesImage at 0x7f4cde153240>
 
 
 
 
-![png](2_image_analysis_files/2_image_analysis_24_2.png)
+![png](2_image_analysis_files/2_image_analysis_25_2.png)
 
 
 #### Let's do some classification and use that to create a new false colour composite showing three classification categories. We will assume that:
@@ -261,35 +285,36 @@ class_comp = np.dstack((c1,c2,c3)).astype(np.uint8) * 255
 plt.imshow(class_comp)
 ```
 
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in greater_equal
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in greater_equal
       """Entry point for launching an IPython kernel.
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in greater
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in greater
       """Entry point for launching an IPython kernel.
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:2: RuntimeWarning: invalid value encountered in less
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:2: RuntimeWarning: invalid value encountered in less
       
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:2: RuntimeWarning: invalid value encountered in greater
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:2: RuntimeWarning: invalid value encountered in greater
       
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:3: RuntimeWarning: invalid value encountered in greater_equal
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:3: RuntimeWarning: invalid value encountered in greater_equal
       This is separate from the ipykernel package so we can avoid doing imports until
-    /Users/pablo/miniconda3/lib/python3.6/site-packages/ipykernel_launcher.py:3: RuntimeWarning: invalid value encountered in less_equal
+    /usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:3: RuntimeWarning: invalid value encountered in less_equal
       This is separate from the ipykernel package so we can avoid doing imports until
 
 
 
 
 
-    <matplotlib.image.AxesImage at 0x127c5eb00>
+    <matplotlib.image.AxesImage at 0x7f4cde093ef0>
 
 
 
 
-![png](2_image_analysis_files/2_image_analysis_26_2.png)
+![png](2_image_analysis_files/2_image_analysis_27_2.png)
 
 
 #### You will see this leaves a fourth class in the image, of pixels that fall in none of the three classes. They show up in black. There are two surfaces that show up 'green' and one area that shows mixed  black and blue bits. What are they?
 
 #### This simple classification uses index thresholds, which is a crude but  sometimes useful way of classifying images. In this case, it helps to finding unvegetated green surfaces, such as tennis courts and artificial grass. It is also clear that greenish water confounds the classification, however. 
 
-***
 
-[back](/dea_training/program.html)
+```python
+
+```
