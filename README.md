@@ -32,7 +32,7 @@ Duration: Training course will be delivered over 2 days (6 hours each day).
 
 Format: Hands-on exercises and practical examples delivered to an audience of 10-20 people.
 
-Dates and Location: 3 sessions to be held between August and December 2019. _(course dates will be anounced soon)_
+Dates and Location: 3 sessions to be held between August 2019 and March 2020.
 
 See the [Program](./program.html) for a complete description of the contents.
 
